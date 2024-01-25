@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "63e80094-4519-469a-a304-a0cc95b2af37",
+		"name": "book store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16700889",
+		"_collection_link": "https://mta-automation.postman.co/workspace/practical-tools~fc617429-33d3-44a1-b6b1-81e38fff92da/collection/16700889-63e80094-4519-469a-a304-a0cc95b2af37?action=share&source=collection_link&creator=16700889"
+	},
+	"item": [
+		{
+			"name": "Get total entities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Publishers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/publishers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"publishers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\": \"292994-393\",\r\n    \"author\": {\r\n        \"name\":\"Menash\",\r\n        \"address\":\"Yaman\",\r\n        \"url\": \"https://en.wikipedia.org/wiki/Anna_Zak\"\r\n    },\r\n    \"publisher\": {\r\n        \"name\": \"AZ\",\r\n        \"address\": \"TA\",\r\n        \"url\": \"https://www.youtube.com/watch?v=bcuRKDY0Rz0&list=PLlaQ6gGSzbJsygSxc_obUqTOxJYUXzbJC&index=7&ab_channel=AnnaZakOfficialChannel\",\r\n        \"phone\": \"052-5381648\"        \r\n    },\r\n    \"year\": 1990,\r\n    \"title\": \"Ana1Noa0\",\r\n    \"price\": 1000000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bookstore/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/book/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all books with title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/books/find?title=Ana1Noa0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"books",
+						"find"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Ana1Noa0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get publisher by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/publisher/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"publisher",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all books of publisher",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookstore/publisher/2/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookstore",
+						"publisher",
+						"2",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
