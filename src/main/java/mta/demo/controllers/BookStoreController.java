@@ -29,8 +29,7 @@ public class BookStoreController {
 
     @GetMapping(value = "/")
     @ResponseBody
-    public HashMap <String, Long> getCount()
-    {
+    public HashMap <String, Long> getCount() {
         HashMap <String, Long> counts = new HashMap<>();
         counts.put("Books", bookService.count());
         counts.put("Authors", authorService.count());
@@ -40,64 +39,55 @@ public class BookStoreController {
 
     @GetMapping(value = "/books")
     @ResponseBody
-    public List<Book> getAllBooks()
-    {
+    public List<Book> getAllBooks() {
         return bookService.list();
     }
 
     @GetMapping(value = "/publishers")
     @ResponseBody
-    public List<Publisher> getAllPublishers()
-    {
+    public List<Publisher> getAllPublishers() {
         return publisherService.list();
     }
 
     @GetMapping(value = "/authors")
     @ResponseBody
-    public List<Author> getAllAuthors()
-    {
+    public List<Author> getAllAuthors() {
         return authorService.list();
     }
 
     @PostMapping("/book")
     @ResponseBody
-    public Book saveNewBook(@RequestBody Book book)
-    {
+    public Book saveNewBook(@RequestBody Book book) {
         return bookService.newBook(book);
     }
 
     @GetMapping("/book/{id}")
     @ResponseBody
-    public Book getBookById(@PathVariable Long id)
-    {
+    public Book getBookById(@PathVariable Long id) {
         return bookService.getById(id);
     }
 
     @GetMapping("/books/{title}")
     @ResponseBody
-    public List <Book> getBookByTitle(@PathVariable String title)
-    {
+    public List <Book> getBookByTitle(@PathVariable String title) {
         return bookService.getByTitle(title);
     }
 
     @GetMapping("/books/find")
     @ResponseBody
-    public List <Book> getBookContainsTitle(@RequestParam String title)
-    {
+    public List <Book> getBookContainsTitle(@RequestParam String title) {
         return bookService.getByContainsTitle(title);
     }
 
     @GetMapping("/publisher/{id}")
     @ResponseBody
-    public Publisher getPublisherById(@PathVariable Long id)
-    {
+    public Publisher getPublisherById(@PathVariable Long id) {
         return publisherService.getById(id);
     }
 
     @GetMapping("/publisher/{id}/books")
     @ResponseBody
-    public List<Book> getPublisherBooks(@PathVariable Long id)
-    {
+    public List<Book> getPublisherBooks(@PathVariable Long id) {
         return bookService.getAllBooksByPublisherId(id);
     }
 
